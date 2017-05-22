@@ -35,7 +35,11 @@ module.exports = {
       },
       {
         test: /\.(woff2?|svg)$/,
-        use: 'url-loader?limit=10000' }
+        use: 'url-loader?limit=10000'
+      },
+      {
+        test:/bootstrap-sass[\/\\]assets[\/\\]javascripts[\/\\]/, loader: 'imports-loader?jQuery=jquery'
+      }
     ]
   },
   devServer: {
