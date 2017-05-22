@@ -6,13 +6,15 @@ var isProd = process.env.NODE_ENV === 'production';
 var cssDev = ['style-loader', 'css-loader'];
 var cssProd = ExtractTextPlugin.extract({
   fallback: 'style-loader',
-  loader: ['css-loader'],
+  loader: ['css-loader', 'sass-loader'],
   publicPath: '/dist'
 });
 var cssConfig = isProd ? cssProd : cssDev;
+var bootstrapEntryPoints = require('./webpack.bootstrap.config.js');
+var bootstrapConfig = isProd ? bootstrapEntryPoints.prod : bootstrapEntryPoints.dev;
 
 module.exports = {
-  entry: './src/index.js',
+  entry: [bootstrapConfig, './src/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -28,9 +30,12 @@ module.exports = {
         use: 'pug-loader'
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.(jpe?g|png|gif|svg|ttf|eot)$/i,
         use: 'file-loader'
-      }
+      },
+      {
+        test: /\.(woff2?|svg)$/,
+        use: 'url-loader?limit=10000' }
     ]
   },
   devServer: {
@@ -44,7 +49,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "Your-Title-Here",
       hash: true,
-      template: './src/index.pug'
+      template: './src/example.pug'
     }),
     new ExtractTextPlugin({
       filename: 'main.css',
