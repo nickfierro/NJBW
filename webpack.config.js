@@ -31,14 +31,15 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|svg|ttf|eot)$/i,
-        use: 'file-loader'
+        use: ['file-loader']
       },
       {
         test: /\.(woff2?|svg)$/,
         use: 'url-loader?limit=10000'
       },
       {
-        test:/bootstrap-sass[\/\\]assets[\/\\]javascripts[\/\\]/, loader: 'imports-loader?jQuery=jquery'
+        test:/bootstrap-sass[\/\\]assets[\/\\]javascripts[\/\\]/,
+        use: 'imports-loader?jQuery=jquery'
       }
     ]
   },

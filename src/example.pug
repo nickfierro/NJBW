@@ -189,7 +189,7 @@ html(lang='en')
                 td @twitter
       .page-header
         h1 Thumbnails
-      img.img-thumbnail(data-src='holder.js/200x200', alt='A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera')
+      img.img-thumbnail(src=require('./img/pug.png'), alt='A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera')
       .page-header
         h1 Labels
       h1
@@ -258,22 +258,22 @@ html(lang='en')
           a(href='#')
             | Messages
             span.badge 3
-      .page-header
-        h1 Dropdown menus
-      .dropdown.theme-dropdown.clearfix
-        a#dropdownMenu1.sr-only.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
-          | Dropdown
-          span.caret
-        ul.dropdown-menu(aria-labelledby='dropdownMenu1')
-          li.active
-            a(href='#') Action
-          li
-            a(href='#') Another action
-          li
-            a(href='#') Something else here
-          li.divider(role='separator')
-          li
-            a(href='#') Separated link
+      //- .page-header
+      //-   h1 Dropdown menus
+      //- .dropdown.theme-dropdown.clearfix
+      //-   a#dropdownMenu1.sr-only.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+      //-     | Dropdown
+      //-     span.caret
+      //-   ul.dropdown-menu(aria-labelledby='dropdownMenu1')
+      //-     li.active
+      //-       a(href='#') Action
+      //-     li
+      //-       a(href='#') Another action
+      //-     li
+      //-       a(href='#') Something else here
+      //-     li.divider(role='separator')
+      //-     li
+      //-       a(href='#') Separated link
       .page-header
         h1 Navs
       ul.nav.nav-tabs(role='tablist')
@@ -491,11 +491,11 @@ html(lang='en')
           li(data-target='#carousel-example-generic', data-slide-to='2')
         .carousel-inner(role='listbox')
           .item.active
-            img(data-src='holder.js/1140x500/auto/#777:#555/text:First slide', alt='First slide')
+            img(src=require('./img/ethereum.png'), alt='First slide')
           .item
-            img(data-src='holder.js/1140x500/auto/#666:#444/text:Second slide', alt='Second slide')
+            img(src=require('./img/bitcoin.jpg'), alt='Second slide')
           .item
-            img(data-src='holder.js/1140x500/auto/#555:#333/text:Third slide', alt='Third slide')
+            img(src=require('./img/thumbsup.jpg'), alt='Third slide')
         a.left.carousel-control(href='#carousel-example-generic', role='button', data-slide='prev')
           span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
           span.sr-only Previous
