@@ -1,0 +1,19 @@
+{
+  "name": "njbw",
+  "version": "1.0.0",
+  "description": "node + jade + bootstrap + webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickfierro/NJBW.git"
+  },
+  "author": "nickfierro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nickfierro/NJBW/issues"
+  },
+  "homepage": "https://github.com/nickfierro/NJBW#readme"
+}
